@@ -14,17 +14,17 @@ class Calculator():
         self.root.geometry(f'{width}x{height}+{left}+{top}')
         self.root.resizable(False, False)
 
-    def create_display(self):
+    def display(self):
         self.display = tk.StringVar()
         display_entry = ttk.Entry(self.root, textvariable=self.display, font=('Arial', 55), justify='right', state='disabled')
         display_entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10, sticky='nsew')
 
-    def create_buttons(self):
+    def buttons(self):
         buttons = [
             '7','8','9','/',
             '4','5','6','*',
             '1','2','3','-',
-            '0','AC','=','+'
+            '0','AC','=','+',
         ]
 
         row_val = 1
@@ -53,14 +53,14 @@ class Calculator():
                 result = eval(current_text)
                 self.display.set(result)
             except Exception as e:
-                self.display.set('Error')
+                self.display.set('')
         else:
             self.display.set(current_text + button)
 
     def run(self):
         self.window()
-        self.create_display()
-        self.create_buttons()
+        self.display()
+        self.buttons()
         self.root.mainloop()
 
 calculator = Calculator()
