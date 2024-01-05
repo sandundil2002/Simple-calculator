@@ -27,12 +27,15 @@ class Calculator():
             '0','AC','=','+',
         ]
 
+        button_style = ttk.Style()
+        button_style.configure('TButton', font=('Arial', 25))
+
         row_val = 1
         col_val = 0
 
         for button in buttons:
             ttk.Button(self.root, text=button, style="TButton", command=lambda b=button: self.on_button_click(b)).grid(
-                row=row_val, column=col_val, padx=5, pady=5, sticky='nsew')
+                row=row_val, column=col_val, padx=10, pady=5, sticky='nsew')
             col_val += 1
             if col_val > 3:
                 col_val = 0
