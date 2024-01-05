@@ -16,7 +16,7 @@ class Calculator():
 
     def display(self):
         self.display = tk.StringVar()
-        display_entry = ttk.Entry(self.root, textvariable=self.display, font=('Arial', 55), justify='right', state='disabled')
+        display_entry = ttk.Entry(self.root, textvariable=self.display, font=('Arial 60 bold'), justify='right',state='disabled')
         display_entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10, sticky='nsew')
 
     def buttons(self):
